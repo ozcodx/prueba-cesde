@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar/Editar Curso</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Formulario de Curso</h1>
+    </header>
+
+    <main>
+        <form id="course-form">
+            <label for="nombre">Nombre del Curso:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" required></textarea>
+
+            <label for="duracion">Duración (semanas):</label>
+            <input type="number" id="duracion" name="duracion" required min="1">
+
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" required min="0.01" step="0.01">
+
+            <label for="fechaInicio">Fecha de Inicio:</label>
+            <input type="datetime-local" id="fechaInicio" name="fechaInicio" required>
+
+            <label for="docente">Docente:</label>
+            <select id="docente" name="docente"></select>
+
+            <button type="submit">Guardar Curso</button>
+        </form>
+    </main>
+
+    <script src="assets/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadDocentes);
+        document.getElementById('course-form').addEventListener('submit', submitCourse);
+    </script>
+</body>
+</html>
